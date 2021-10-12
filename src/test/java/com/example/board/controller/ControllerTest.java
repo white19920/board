@@ -32,7 +32,11 @@ public class ControllerTest {
 
     @Test
     public void testList() throws Exception{
-        log.info(mockMvc.perform(MockMvcRequestBuilders.get("/board/list")).andReturn().getModelAndView().getModelMap().toString());
+        log.info(mockMvc.perform(MockMvcRequestBuilders.get("/board/list")
+                .param("pageNum", "1")
+                .param("amount","10")
+        )
+                .andReturn().getModelAndView().getModelMap().toString());
     }
 
     @Test
