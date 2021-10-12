@@ -2,6 +2,7 @@ package com.example.board.controller;
 
 import com.example.board.beans.vo.BoardVO;
 import com.example.board.beans.vo.Criteria;
+import com.example.board.beans.vo.PageDTO;
 import com.example.board.services.BoardService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -38,6 +39,7 @@ public class BoardController {
         log.info("list");
         log.info("-------------------------------");
         model.addAttribute("list", boardService.getList(criteria));
+        model.addAttribute("pageMaker", new PageDTO(122, 10 , criteria));
         return "board/list";
     }
 
