@@ -2,6 +2,7 @@ package com.example.board.services;
 
 import com.example.board.beans.dao.BoardDAO;
 import com.example.board.beans.vo.BoardVO;
+import com.example.board.beans.vo.Criteria;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -42,7 +43,7 @@ public class BoardServiceImple implements BoardService{
     }
 
     @Override
-    public List<BoardVO> getList() {
-        return boardDAO.getList();
+    public List<BoardVO> getList(Criteria criteria) {
+        return boardDAO.getList(criteria);
     }
 }
