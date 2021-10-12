@@ -69,7 +69,6 @@ public class BoardController {
         log.info("---------------------------------");
 
         model.addAttribute("board",boardService.get(bno));
-
     }
 
 //    /modify 요청을 처리할 수 있는 비지니스 로직 작성
